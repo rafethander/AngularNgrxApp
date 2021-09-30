@@ -1,0 +1,46 @@
+<div class="card">
+  <div class="card-header">
+    {{ this.title }}
+  </div>
+  <div class="card-body">
+    <table class="table table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>Name</th>
+          <th>UserName</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Website</th>
+          <th></th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of dataSource | async">
+          <td>{{ item.name }}</td>
+          <td>{{ item.username }}</td>
+          <td>{{ item.email }}</td>
+          <td>{{ item.phone }}</td>
+          <td>{{ item.website }}</td>
+          <td><button class="btn btn-primary" (click)="OnClick(item.id)">Details</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<dx-popup
+  width="720"
+  height="600"
+  [showTitle]="true"
+  [title]="this.titlePopup"
+  [dragEnabled]="false"
+  [closeOnOutsideClick]="false"
+  [showCloseButton]="true"
+  [(visible)]="this.isActive"
+  (onHiding)="onHiding()"
+>
+  <app-user-information-detail
+  [item]="this.sendItem"
+  > </app-user-information-detail>
+</dx-popup>
