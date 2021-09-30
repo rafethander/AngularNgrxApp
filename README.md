@@ -2,6 +2,20 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.4.
 
+I have used some npm tools inside ;
+
+Before ng serve have to run this cli codes;
+
+npm install devextreme@21.1 devextreme-angular@21.1 --save --save-exact
+
+ng add @ng-bootstrap/ng-bootstrap
+
+npm i rxjs
+
+npm install @ngrx/store --save
+
+npm install
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
